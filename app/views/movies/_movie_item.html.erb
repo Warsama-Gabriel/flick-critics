@@ -1,0 +1,13 @@
+<div class="card">
+	<div class="row ">
+	<div class="col-md-4"><%= image_tag(base_url + poster_size + movie_item.poster_path) %></div>
+		<div class="col-md-8 px-3">
+			<div class="card-block px-3">
+				<h4 class="card-title"><%= movie_item.title %></h4>
+				<p class="card-text">Release date: <%= format_date movie_item.release_date %></p>
+				<p class="card-text">Genre: </p>
+			</div>
+		</div>
+	</div>
+</div>
+<br />
