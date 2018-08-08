@@ -7,6 +7,6 @@ class MoviesController < ApplicationController
   																 include_adult: false,
   																 page: 1
   																).results
-  	@poster_size = config.images.poster_sizes[2]
+  	
   end
 end
