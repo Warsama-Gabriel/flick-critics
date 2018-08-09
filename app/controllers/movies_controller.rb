@@ -1,12 +1,14 @@
 class MoviesController < ApplicationController
   def index
-  	config = Tmdb::Configuration.get
-  	@base_url = config.images.base_url
   	@movies = Tmdb::Discover.movie(language: 'en-US', 
   																 sort_by: 'popularity.desc', 
   																 include_adult: false,
   																 page: 1
   																).results
-  	
+    @reviews = Review.all
+  end
+
+  def show
+    @movie = Tmdb::Movie.detail(params[:movie_id])
   end
 end

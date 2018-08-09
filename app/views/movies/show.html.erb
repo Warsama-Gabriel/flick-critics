@@ -1,0 +1,43 @@
+<%= @movie.inspect %>
+
+<div class="page">
+	<div class="content">
+		<div class="card">	
+			<div class="card-body">
+				<div class="movie-content">
+					<div class="row">
+						<div class="col-md-6">
+							<%= format_poster @movie, size: 4 %>
+						</div>
+						<div class="col-md-6">
+							<h2><%= @movie.title %></h2>
+							<div class="movie-summary">
+								<p><%= @movie.overview %></p>
+								<ul class="movie-meta">
+									<li><strong>Rating:</strong></li>
+									<li><strong>Length:</strong></li>
+									<li><strong>Category: <%= format_genre @movie.genres, style: 'list' %></strong></li>
+								</ul>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<style type="text/css">
+	.content {
+		padding: 30px;
+	}
+
+	.content .movie-content {
+		padding: 30px;
+	}
+
+	.movie-meta {
+		list-style: none;
+		padding-left: 0px;
+	}
+</style>
