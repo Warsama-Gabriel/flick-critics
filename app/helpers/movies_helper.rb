@@ -6,7 +6,12 @@ module MoviesHelper
 	POSTER_SIZE = CONFIG.images.poster_sizes[2]
 
 	def format_genre movie_item
-		MoviesHelper::GENRES.select { |x| movie_item.genre_ids.include?(x.id) }.map(&:name).first
+		genres = ''
+		genre_items = MoviesHelper::GENRES.select { |x| movie_item.genre_ids.include?(x.id) }.map(&:name)
+		genre_items.each do |genre|
+			genres << "<span class='btn btn-success btn-sm genre-text' style='margin:2px;'>#{genre}</span>"
+		end
+		genres.html_safe
 	end
 
 	def format_poster movie_item
@@ -14,6 +19,6 @@ module MoviesHelper
 	end
 
 	def format_date release_date
-		Date.parse(release_date).strftime("%b %d %Y")
+		Date.parse(release_date).strftime("%b, %d %Y")
 	end
 end

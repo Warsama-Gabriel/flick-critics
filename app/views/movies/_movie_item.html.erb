@@ -1,22 +1,38 @@
-<div class="card bg-light mb-3">
-	<div class="card-header"></div>
+ <div class="card bg-light mb-3">
 	<div class="row ">
-		<div class="col-md-4"><%= format_poster movie_item %></div>
-		<div class="col-md-8 px-3">
+		<div class="col-md-3">
+			<div class="thumbnail">
+				<div class="image"><%= link_to format_poster(movie_item), '#' %></div>
+			</div>
+		</div>
+		<div class="col-md-9 px-3">
 			<div class="card-block">
 				<div class="card-body">
-					<h4 class="card-title"><u><%= movie_item.title %></u></h4>
+					<h4 class="card-title"><%= movie_item.title %></h4>
 					<p class="card-sub-title mb-2 text-muted">Release date: <%= format_date movie_item.release_date %></p>
-					<p class="card-sub-title mb-2 text-muted">Genre: <%= format_genre movie_item %> </p>
-					<h4><u>Reviews</u></h3>
+					<p class="card-sub-title mb-2 text-muted"><%= format_genre movie_item %> </p>
+					<hr>
+					<p><%= link_to 'write a review', '#', style: 'text-decoration: underline;' %></p>
+					<div class="review-data">
+						<i>"This movie was really great I totally reccommend it!! five stars."</i>
+						<p class="author-text">-John Rodriguez</p>
+					</div>
+					<div class="review-data">
+						<i>"This movie was really great I totally reccommend it!! five stars."</i>
+						<p class="author-text">-John Rodriguez</p>
+					</div>
+					<div class="review-data">
+						<i>"This movie was really great I totally reccommend it!! five stars."</i>
+						<p class="author-text">-John Rodriguez</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<br />
 
-
-
-
+	
+<style type="text/css">
+	
+</style>
