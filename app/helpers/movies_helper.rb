@@ -4,20 +4,22 @@ module MoviesHelper
 	CONFIG = Tmdb::Configuration.get
 	BASE_URL = CONFIG.images.base_url
 	
-
-	def format_genre movie_item, style=nil
+	def format_genre movie_item, style:
 		genres = ''
 		if style == 'button'
-			genre_items = MoviesHelper::GENRES.select { |x| movie_item.genre_ids.include?(x.id) }.map(&:name)
+			genre_items = get_genres movie_item.genre_ids
 			genre_items.each do |genre|
 				genres << "<span class='btn btn-success btn-sm genre-text' style='margin:2px;'>#{genre}</span>"
 			end
 			genres.html_safe
 		elsif style == 'list'
-			binding.pry
-			genre_items = MoviesHelper::GENRES.select { |x| movie_item.map(&:id).include?(x.id) }.map(&:name)
-			genre_items.join('/')
+			genres = get_genres movie_item.map(&:id)
+			genres.join('/')
 		end
+	end
+
+	def get_genres object
+		MoviesHelper::GENRES.select { |x| object.include?(x.id) }.map(&:name)
 	end
 
 	def format_poster movie_item, size:

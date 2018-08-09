@@ -1,7 +1,10 @@
-$font-family-base: Roboto, "Helvetica", sans-serif;
 
+@import url('https://fonts.googleapis.com/css?family=Roboto|Ubuntu+Condensed');@import "bootstrap";
 
-@import "bootstrap";
+body {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
 
 /* Custom default button */
 .genre-text {

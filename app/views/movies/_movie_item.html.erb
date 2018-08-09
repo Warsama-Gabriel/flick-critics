@@ -8,7 +8,7 @@
 		<div class="col-md-9 px-3">
 			<div class="card-block">
 				<div class="card-body">
-					<h4 class="card-title"><%= movie_item.title %></h4>
+					<h4 class="card-title"><%= link_to movie_item.title, movie_show_path(movie_item.id) %></h4>
 					<p class="card-sub-title mb-2 text-muted">Release date: <%= format_date movie_item.release_date %></p>
 					<p class="card-sub-title mb-2 text-muted"><%= format_genre movie_item, style: 'button' %> </p>
 					<hr>
