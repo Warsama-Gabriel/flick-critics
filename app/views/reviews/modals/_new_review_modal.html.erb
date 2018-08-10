@@ -8,8 +8,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= render 'reviews/modals/form' %>
+        <%= render 'reviews/modals/form', locals: {movie_id: @movie } %>
       </div>
     </div>
   </div>
 </div>
+
