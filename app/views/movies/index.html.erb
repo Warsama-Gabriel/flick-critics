@@ -1,10 +1,9 @@
 <h1>Welcome to the movies review app!</h1>
-<p><%= @text %></p>
 <div class="row">
-	<div class="col-sm-6">
-		<%= render partial: 'movie_item', collection: @movies, locals: { base_url: @base_url, poster_size: @poster_size } %>
+  <div class="col-lg-9">
+		<%= render partial: 'movie_item', collection: @movies, locals: { reviews: @reviews } %>
 	</div>
-	<div class="col-sm-6">Some reviews</div>
+	<div class="col-sm-3">Some reviews</div>
 </div>
 
 

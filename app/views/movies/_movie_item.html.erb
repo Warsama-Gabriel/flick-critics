@@ -1,13 +1,21 @@
-<div class="card">
+ <div class="card bg-light mb-3">
 	<div class="row ">
-	<div class="col-md-4"><%= image_tag(base_url + poster_size + movie_item.poster_path) %></div>
-		<div class="col-md-8 px-3">
-			<div class="card-block px-3">
-				<h4 class="card-title"><%= movie_item.title %></h4>
-				<p class="card-text">Release date: <%= format_date movie_item.release_date %></p>
-				<p class="card-text">Genre: <%= format_genre movie_item %> </p>
+		<div class="col-md-3">
+			<div class="thumbnail">
+				<div class="image"><%= link_to format_poster(movie_item, size: 2), movie_show_path(movie_item.id) %></div>
+			</div>
+		</div>
+		<div class="col-md-9 px-3">
+			<div class="card-block">
+				<div class="card-body">
+					<h4 class="card-title"><%= link_to movie_item.title, movie_show_path(movie_item.id) %></h4>
+					<p class="card-sub-title mb-2 text-muted">Release date: <%= format_date movie_item.release_date %></p>
+					<p class="card-sub-title mb-2 text-muted"><%= format_genre movie_item, style: 'button' %> </p>
+					<hr>
+					<p><%= link_to 'write a review', new_review_path(movie_item.id), remote: true, "data-toggle" => "modal", style: 'text-decoration: underline;' %></p>
+						<%= render partial: 'review_item', collection: @reviews %>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<br />
