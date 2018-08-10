@@ -9,14 +9,18 @@
 					</div>
 					<div class="row">
 						<div class="col-md-6">
-							<%= format_poster @movie, size: 4 %>
+							<figure>
+								<%= format_poster @movie, size: 4 %>
+							</figure>
 						</div>
 						<div class="col-md-6">
 							<h2 class="card-title"><%= @movie.title %></h2>
 							<h5 class="card-text"><i><u><%= @movie.tagline %></u></i></h5>
 							<div class="movie-summary">
 								<div class="trailer">
-									<%= generate_trailer width: 550, height: 400, key: @trailer.key %>
+									<div class="iframe-container">
+										<%= generate_trailer width: 550, height: 400, key: @trailer.key %>
+									</div>
 								</div>
 								<p class="card-text"><i><%= @movie.overview %></i></p>
 								<ul class="movie-meta">

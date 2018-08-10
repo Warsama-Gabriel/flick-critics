@@ -1,2 +1,6 @@
-$("body").append("<%= escape_javascript render 'modals/new_review_modal' %>")
-  $("#modal").modal("show")
+$("body").append("<%= escape_javascript render 'reviews/modals/new_review_modal', locals: { movie: @movie, review: @review } %>")
+ $("#modal").modal('show');
+
+$("#modal").on('hidden.bs.modal', function () {
+  $(this).data('bs.modal', null);
+});
