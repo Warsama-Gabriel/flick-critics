@@ -8,10 +8,5 @@
 
 Review.delete_all
 
-6.times do |review|
-	Review.create!(
-		email: Faker::Internet.email,
-		body: Faker::Lorem.paragraph
-	)
 end
 

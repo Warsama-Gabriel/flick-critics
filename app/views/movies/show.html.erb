@@ -1,21 +1,27 @@
-<%= @movie.inspect %>
-
 <div class="page">
 	<div class="content">
 		<div class="card">	
 			<div class="card-body">
 				<div class="movie-content">
+					<div class="breadcrumbs">
+						<span class="breadcrumb-item active" aria-current="page"><%= link_to 'Movies', root_path %></span>
+						<span class="breadcrumb-item active" aria-current="page"><%= @movie.title %></span>
+					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<%= format_poster @movie, size: 4 %>
 						</div>
 						<div class="col-md-6">
 							<h2 class="card-title"><%= @movie.title %></h2>
+							<h5 class="card-text"><i><u><%= @movie.tagline %></u></i></h5>
 							<div class="movie-summary">
-								<p class="card-text"><%= @movie.overview %></p>
+								<div class="trailer">
+									<%= generate_trailer width: 550, height: 400, key: @trailer.key %>
+								</div>
+								<p class="card-text"><i><%= @movie.overview %></i></p>
 								<ul class="movie-meta">
 									<li><strong>Rating:</strong> <%= @movie.vote_average %></li>
-									<li><strong>Length:</strong> <%= distance_of_time_in_words(@movie.runtime * 60) %></li>
+									<li><strong>Length:</strong> <%= distance_of_time_in_words(@movie.runtime * 60) if @movie.runtime %></li>
 									<li><strong>Category:</strong> <%= format_genre @movie.genres, style: 'list' %></li>
 								</ul>
 								<p><%=link_to 'back', root_path %></p>
@@ -33,6 +39,14 @@
 		padding: 30px;
 	}
 
+	.trailer {
+		margin-bottom: 20px;
+	}
+
+	.movie-summary {
+		margin-top: 15px;
+	}
+
 	.content .movie-content {
 		padding: 30px;
 	}
@@ -41,4 +55,8 @@
 		list-style: none;
 		padding-left: 0px;
 	}
+
+	.movie-meta li, .starring li {
+    margin-bottom: 10px;
+  }
 </style>

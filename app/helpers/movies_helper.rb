@@ -28,6 +28,17 @@ module MoviesHelper
 	end
 
 	def format_date release_date
-		Date.parse(release_date).strftime("%b, %d %Y")
+		Date.parse(release_date).strftime("%b, %d %Y") if release_date.present?
 	end
+
+	def generate_trailer width:, height:, key:
+		trailer = "<iframe type='text/html' width='#{width}' height='#{height}'" +
+  	 	"src='https://www.youtube.com/embed/#{key}?autoplay=0'" +
+  		"frameborder='0'></iframe>"
+  	trailer.html_safe
+	end
+
+
+
+
 end
