@@ -1,7 +1,9 @@
 <%= form_with(model: @review, id: 'new_review') do |form| %>
   
   <div id="error_explanation" style="margin-bottom:10px;"></div>
-  <%= hidden_field_tag 'movie_id', @movie.id %>
+  
+  <%= form.hidden_field :title, value: @movie.title %>
+  <%= form.hidden_field :movie_id, value: @movie.id %>
   
   <div class="form-group">
     <%= form.label :email %><br />
@@ -19,11 +21,9 @@
 <% end %>
 
 <script type="text/javascript">
-  $("#error_explanation").html('');
+
   $("#new_review").on("ajax:success", function(event) {
-    var data, ref, status, xhr;
-    ref = event.detail, data = ref[0], status = ref[1], xhr = ref[2];
-    $("#error_explanation").append(xhr.responseText);
+    $('#modal').modal('hide');
   }).on("ajax:error", function(event) {
     var data, ref, status, xhr;
     ref = event.detail, data = ref[0], status = ref[1], xhr = ref[2];

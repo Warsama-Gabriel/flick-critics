@@ -1,1 +1,1 @@
-alert("successfully added review!!");
+$("#<%=@review.movie_id%>").html("<%= escape_javascript(render(partial: 'movies/review_item')) %>");

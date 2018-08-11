@@ -13,7 +13,11 @@
 					<p class="card-sub-title mb-2 text-muted"><%= format_genre movie_item, style: 'button' %> </p>
 					<hr>
 					<p><%= link_to 'write a review', new_review_path(movie_item.id), remote: true, "data-toggle" => "modal", style: 'text-decoration: underline;' %></p>
-						<%= render partial: 'review_item', collection: @reviews %>
+					<% if @reviews.any? %>
+						<div id="<%= movie_item.id %>">
+							<%= render partial: 'review_item', collection: @reviews, locals: {movie_id: movie_item.id } %>
+						</div>
+					<% end %>
 				</div>
 			</div>
 		</div>

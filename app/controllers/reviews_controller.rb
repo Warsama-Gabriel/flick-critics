@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
 		@review = Review.new(review_params)
 		respond_to do |format|
 			if @review.save
-				format.js { redirect_to reviews_path }
+				format.js
 			else
 				format.json { render json: @review.errors, status: :unprocessable_entity }
 			end
@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def review_params
-		params.require(:review).permit(:email, :body, :movie_id)
+		params.require(:review).permit(:email, :body, :movie_id, :title)
 	end
 
 end
