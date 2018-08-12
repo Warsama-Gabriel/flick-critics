@@ -16,7 +16,7 @@ body {
 
 .bg-dark {
     background-color: #494f54 !important;
-    opacity: 0.96;
+    opacity: 0.8;
 }
 
 .bg-light {
@@ -105,14 +105,19 @@ body {
 }
 
 .breadcrumbs {
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ebebeb;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .iframe-container {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.review-data {
+  margin-right: 12px;
 }
 
 
