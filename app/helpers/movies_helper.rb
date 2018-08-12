@@ -9,7 +9,7 @@ module MoviesHelper
 		if style == 'button'
 			genre_items = get_genres movie_item.genre_ids
 			genre_items.each do |genre|
-				genres << "<span class='btn btn-success btn-sm genre-text' style='margin:2px;'>#{genre}</span>"
+				genres << "<span class='btn btn-info btn-sm genre-text' style='margin:2px;'>#{genre}</span>"
 			end
 			genres.html_safe
 		elsif style == 'list'

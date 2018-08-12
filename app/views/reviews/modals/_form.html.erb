@@ -1,21 +1,9 @@
-<%= form_with(model: @review, local: true) do |form| %>
-  <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
-      <ul>
-      <% @review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= form.label :name %><br />
-    <%= form.text_field :name, class: "form-control" %>
-  </div>
-
+<%= form_with(model: @review, id: 'new_review') do |form| %>
+  <div id="error_explanation" style="margin-bottom:10px;"></div>
+  
+  <%= form.hidden_field :title, value: @movie.title %>
+  <%= form.hidden_field :movie_id, value: @movie.id %>
+  
   <div class="form-group">
     <%= form.label :email %><br />
     <%= form.email_field :email, class: "form-control" %>
@@ -30,3 +18,31 @@
     <%= form.submit 'Submit', class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+
+  $("#new_review").on("ajax:success", function(event) {
+    $('#modal').modal('hide');
+  }).on("ajax:error", function(event) {
+    var data, ref, status, xhr;
+    ref = event.detail, data = ref[0], status = ref[1], xhr = ref[2];
+    errors = JSON.parse(xhr.responseText);
+    count = Object.values(errors).length
+    $("#error_explanation").append(count + ' errors prevented this Review from being saved.<br />')
+    $.each(errors, function(field, messages) {
+      $("#error_explanation").append('<span style="color:red;"> :<u>' + 
+        field + ' ' + 
+        $.map(messages, function(m) {
+        return m + '</u></span>';
+      }).join(' ') + '<br />');
+    });
+  });
+</script>
+
+
+
+
+
+
+
+

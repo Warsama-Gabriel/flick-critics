@@ -6,6 +6,52 @@ body {
   font-family: 'Ubuntu Condensed', sans-serif;
   font-family: 'Roboto', sans-serif;
   color: #2E2E2E;
+  background-image: url(cinema.jpeg);
+}
+
+.movie-content {
+  margin-top: 20px;
+}
+
+
+.bg-dark {
+    background-color: #494f54 !important;
+    opacity: 0.8;
+}
+
+.bg-light {
+    /* background-color: #F8FA49 !important; */
+    opacity: 0.96;
+}
+
+.card {
+  opacity: 0.96;
+}
+
+
+.content {
+  padding: 30px;
+}
+
+.trailer {
+  margin-bottom: 20px;
+}
+
+.movie-summary {
+  margin-top: 15px;
+}
+
+.content .movie-content {
+  padding: 30px;
+}
+
+.movie-meta {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.movie-meta li, .starring li {
+  margin-bottom: 10px;
 }
 
 /* Custom default button */
@@ -59,13 +105,21 @@ body {
 }
 
 .breadcrumbs {
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ebebeb;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .iframe-container {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
+
+
+.review-data {
+  margin-right: 12px;
+}
+
+
+
 

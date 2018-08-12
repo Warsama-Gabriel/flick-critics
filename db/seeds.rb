@@ -8,5 +8,4 @@
 
 Review.delete_all
 
-end
 

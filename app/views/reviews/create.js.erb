@@ -1,0 +1,1 @@
+$("<%= escape_javascript(render partial: 'movies/review_item', locals: { review_item: @review, movie_id: @review.movie_id.to_i }) %>").appendTo("#review-<%= @review.movie_id %>");

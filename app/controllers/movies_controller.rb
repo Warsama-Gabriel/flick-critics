@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
   	@movies = Tmdb::Movie.popular.results
-    @reviews = Review.all
+    @reviews = Review.order(created_at: :desc).limit(3)
   end
 
   def show
