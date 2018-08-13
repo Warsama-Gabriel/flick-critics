@@ -23,6 +23,7 @@
 									</div>
 								</div>
 								<p class="card-text"><i>"<%= @movie.overview %>"</i></p>
+								<!-- <div class="star-rating" data-score= <%= @movie.vote_average %> ></div> -->
 								<ul class="movie-meta">
 									<li><strong>Rating:</strong> <%= @movie.vote_average %></li>
 									<li><strong>Length:</strong> <%= distance_of_time_in_words(@movie.runtime * 60) if @movie.runtime %></li>

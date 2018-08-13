@@ -38,7 +38,15 @@ module MoviesHelper
   	trailer.html_safe
 	end
 
-
-
-
+	def generate_rating review
+		stars = ""
+		if review.rating && review.rating >= 1 
+			review.rating.times do 
+				stars << image_tag("star-on.png")
+			end
+		else
+			stars << image_tag("star-off.png")
+		end
+		stars.html_safe
+	end
 end

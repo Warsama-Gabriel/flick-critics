@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_021106) do
+ActiveRecord::Schema.define(version: 2018_08_12_231254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_021106) do
     t.text "body"
     t.string "email"
     t.string "title"
+    t.integer "rating"
     t.index ["movie_id"], name: "index_reviews_on_movie_id"
   end
 
