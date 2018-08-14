@@ -8,6 +8,10 @@ class ReviewsController < ApplicationController
 		@review = Review.new
 	end
 
+	def all
+		@reviews = Review.all.order(:title)
+	end
+
 	def create
 		@review = Review.new(review_params)
 		respond_to do |format|

@@ -38,15 +38,17 @@ module MoviesHelper
   	trailer.html_safe
 	end
 
-	def generate_rating review
+	def generate_rating rating
 		stars = ""
-		if review.rating && review.rating >= 1 
-			review.rating.times do 
+		if rating && rating >= 1 
+			rating.times do 
 				stars << image_tag("star-on.png")
 			end
-		else
-			stars << image_tag("star-off.png")
 		end
 		stars.html_safe
+	end
+
+	def generate_movie_average_rating movie_id
+		generate_rating Review.find_average_rating_by_movie movie_id
 	end
 end

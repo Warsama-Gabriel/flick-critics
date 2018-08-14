@@ -1,0 +1,9 @@
+<div class="col-md-4">
+	<%= fa_icon "user-circle", class: 'fa-3x' %>
+	<p>By: <%= movie_item_review.email %></p>
+</div>
+<div class="col-md-8 ">
+	<p><%= generate_rating movie_item_review.rating %></p>
+	<p><%= movie_item_review.body %></p>			
+</div>
+<br />

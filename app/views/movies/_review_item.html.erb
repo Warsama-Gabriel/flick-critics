@@ -2,9 +2,10 @@
 	<div class="review-data">
 		<div class="inline"><i><b><%= review_item.body.truncate(100) %></b></i></div>
 		<div class="inline author-text" style="float: right;">-<%= review_item.email %></div>
-		<div class="stars"><%= generate_rating review_item %></div>
+		<div class="stars"><%= generate_rating review_item.rating %></div>
 	  <div></div>
 	</div>
+	<br/>
 <% end %>
 
 

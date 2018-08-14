@@ -29,7 +29,8 @@
 
   $('#star-rating').raty({
     path: '/assets',
-    scoreName: 'review[rating]'
+    scoreName: 'review[rating]',
+    score: 0 
   });
 
   $("#new_review").on("ajax:success", function(event) {
