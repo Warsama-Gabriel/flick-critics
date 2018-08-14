@@ -7,7 +7,7 @@ module SortMovies
 		elsif filter == 'genre'
 			movies.sort_by! { |x| x.genre }
 		elsif filter == 'release_date'
-			movies.sort_by! { |x| x.release_date }
+			movies.sort_by! { |x| x.release_date }.reverse!
 		end
 		movies
 	end
