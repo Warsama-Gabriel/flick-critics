@@ -1,0 +1,21 @@
+<div class="movie-list">
+	<div class="container">
+		<div class="movie-items">
+			<div class="row">
+				<% @movies.each do |movie_item| %>
+					<div class="movie">
+						<div class="col-sm">
+							<div class="thumbnail">
+							<div class="image"><%= link_to format_poster(movie_item, size: 1), movie_show_path(movie_item.id) %></div>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		<%= paginate @movies, pagination_class: "pagination-sm" %>
+	</div>
+</div>
+
+
+

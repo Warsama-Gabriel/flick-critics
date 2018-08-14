@@ -1,1 +1,155 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Ubuntu+Condensed');
 @import "bootstrap";
+@import "font-awesome";
+
+body {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color: #2E2E2E;
+  background-image: url(cinema.jpeg);
+}
+
+.movie-content {
+  margin-top: 20px;
+}
+
+
+.bg-dark {
+    background-color: #494f54 !important;
+    opacity: 0.8;
+}
+
+.bg-light {
+    /* background-color: #F8FA49 !important; */
+    opacity: 0.96;
+}
+
+.card {
+  opacity: 0.96;
+}
+
+
+.content {
+  padding: 30px;
+}
+
+.trailer {
+  margin-bottom: 20px;
+}
+
+.movie-summary {
+  margin-top: 15px;
+}
+
+.content .movie-content {
+  padding: 30px;
+}
+
+.movie-meta {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.movie-meta li, .starring li {
+  margin-bottom: 10px;
+}
+
+/* Custom default button */
+.genre-text {
+	font-size: 11px;
+}
+
+.review-data {
+	font-size: 14px;
+	clear: both;
+}
+
+.author-text {
+	float: right;
+	font-weight: bold;
+	font-style: italic;
+
+}
+
+.card-body {
+  padding: 0.8rem;
+}
+
+.thumbnail {
+    width: 185px;
+    height: 278px;
+}
+
+
+.thumbnail-small {
+  width: 154px;
+  height: 231;
+}
+
+
+.image {
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.image img {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+
+.image:hover img {
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
+     background-color: #cfc ;
+}
+
+.breadcrumbs {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.review-data {
+  margin-right: 12px;
+}
+
+.pagination {
+    clear: both;
+    text-align: center;
+}
+
+.movie-list .container {
+    background: white;
+    opacity: 0.9;
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: 15px;
+}
+
+
+.review-list .container {
+    padding: 30px;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+

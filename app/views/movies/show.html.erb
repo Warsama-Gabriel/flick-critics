@@ -1,0 +1,48 @@
+<div class="page">
+	<div class="content">
+		<div class="card">	
+			<div class="card-body">
+				<div class="movie-content">
+					<div class="breadcrumbs">
+						<span class="breadcrumb-item active" aria-current="page"><%= link_to 'Movies', root_path %></span>
+						<span class="breadcrumb-item active" aria-current="page"><%= @movie.title %></span>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<h2 class="card-title"><%= @movie.title %></h2>
+							<figure>
+								<%= format_poster @movie, size: 3 %>
+							</figure>
+						</div>
+						<div class="col-md-6">
+							<h5 class="card-text"><i><u>'<%= @movie.tagline %>'</u></i></h5>
+							<div class="movie-summary">
+								<div class="trailer">
+									<div class="iframe-container">
+										<%= generate_trailer width: 550, height: 400, key: @trailer.key %>
+									</div>
+								</div>
+								<ul class="movie-meta">
+									<li><strong>Rating:</strong> <%= generate_movie_average_rating @movie.id %></li>
+									<li><strong>Length:</strong> <%= distance_of_time_in_words(@movie.runtime * 60) if @movie.runtime %></li>
+									<li><strong>Category:</strong> <%= format_genre @movie.genres, style: 'list' %></li>
+								</ul>
+							</div>
+					</div>
+				</div>
+				<hr>
+				<a id="Reviews"></a>
+				<h1>Reviews</h1>
+				<div class="row">
+					<%= render partial: 'movie_item_review', collection: @reviews %>
+				</div>
+				<p><%=link_to 'back', root_path %></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<style type="text/css">
+	
+</style>
