@@ -1,6 +1,6 @@
 <% if movie_id == review_item.movie_id.to_i %>
 	<div class="review-data">
-		<div class="inline"><i><b><%= review_item.body.truncate(100) %></b></i></div>
+		<div class="inline"><i><b><%= review_item.body.truncate(60) %></b></i></div>
 		<div class="inline author-text" style="float: right;">-<%= review_item.email %></div>
 		<div class="stars"><%= generate_rating review_item.rating %></div>
 	  <div></div>
