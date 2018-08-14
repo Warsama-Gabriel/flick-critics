@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto|Ubuntu+Condensed');
 @import "bootstrap";
+@import "font-awesome";
 
 body {
   font-family: 'Ubuntu Condensed', sans-serif;
@@ -80,6 +81,13 @@ body {
     height: 278px;
 }
 
+
+.thumbnail-small {
+  width: 154px;
+  height: 231;
+}
+
+
 .image {
     width: 100%;
     height: 100%; 
@@ -119,6 +127,28 @@ body {
 .review-data {
   margin-right: 12px;
 }
+
+.pagination {
+    clear: both;
+    text-align: center;
+}
+
+.movie-list .container {
+    background: white;
+    opacity: 0.9;
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: 15px;
+}
+
+
+.review-list .container {
+    padding: 30px;
+    margin-top: 15px;
+}
+
+
+
 
 
 

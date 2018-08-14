@@ -3,6 +3,12 @@
   
   <%= form.hidden_field :title, value: @movie.title %>
   <%= form.hidden_field :movie_id, value: @movie.id %>
+
+  <div class="form-group">
+    <p>
+     Rating:<div id='star-rating'></div>
+    </p>
+  </div>
   
   <div class="form-group">
     <%= form.label :email %><br />
@@ -20,6 +26,12 @@
 <% end %>
 
 <script type="text/javascript">
+
+  $('#star-rating').raty({
+    path: '/assets',
+    scoreName: 'review[rating]',
+    score: 0 
+  });
 
   $("#new_review").on("ajax:success", function(event) {
     $('#modal').modal('hide');

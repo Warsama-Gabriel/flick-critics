@@ -12,7 +12,6 @@
 					<p class="card-sub-title mb-2 text-muted">Release date: <%= format_date movie_item.release_date %></p>
 					<p class="card-sub-title mb-2 text-muted"><%= format_genre movie_item, style: 'button' %> </p>
 					<hr>
-					<% puts movie_item.id %>
 					<p><%= link_to 'write a review', new_review_path(movie_item.id), remote: true, "data-toggle" => "modal", style: 'text-decoration: underline;' %></p>
 						<div id="review-<%= movie_item.id %>">
 							<% if @reviews.any? %>
@@ -24,3 +23,7 @@
 		</div>
 	</div>
 </div>
+
+
+
+

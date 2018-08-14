@@ -8,6 +8,10 @@ class ReviewsController < ApplicationController
 		@review = Review.new
 	end
 
+	def all
+		@reviews = Review.all.order(:title)
+	end
+
 	def create
 		@review = Review.new(review_params)
 		respond_to do |format|
@@ -26,7 +30,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def review_params
-		params.require(:review).permit(:email, :body, :movie_id, :title)
+		params.require(:review).permit(:email, :body, :movie_id, :title, :rating)
 	end
 
 end
