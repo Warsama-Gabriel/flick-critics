@@ -30,7 +30,6 @@ RSpec.describe Review, type: :model do
 		review_2 = FactoryBot.create(:review, rating: 2)
 		review_3 = FactoryBot.create(:review, rating: 2)
 		review_4 = FactoryBot.create(:review, rating: 3)
-		binding.pry
 		expect(Review.find_average_rating_by_movie(review_1.movie_id)).to eq(2)
 	end
 
