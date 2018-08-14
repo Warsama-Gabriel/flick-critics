@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
   get 'review/new/:movie_id', to: 'reviews#new', as: 'new_review'
   get 'movies/all', to: 'movies#all', as: 'all_movies'
+  get 'movies/sort/:filter', to: 'movies#index', as: 'sort'
 
   get 'movie/detail/:movie_id', to: 'movies#show', as: 'movie_show'
 end

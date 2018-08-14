@@ -4,9 +4,10 @@
 	  	<div class="card" style="margin-bottom: 10px;">
   			<div class="card-body">
 			  	<p class="card-sub-title mb-2 text-muted">Sort by:
-			  		<%= link_to 'Title', '#', class: 'btn btn-primary btn-sm', style: 'margin:2px;' %>
-			  		<%= link_to 'Release Date', '#', class: 'btn btn-success btn-sm', style: 'margin:2px;' %>
-			  		<%= link_to 'Genre', '#', class: 'btn btn-info btn-sm', style: 'margin:2px;' %>
+			  		<%= link_to 'Title', sort_path(filter: "title"), class: 'btn btn-primary btn-sm', style: 'margin:2px;' %>
+			  		<%= link_to 'Release Date', sort_path(filter: "release_date"), class: 'btn btn-success btn-sm', style: 'margin:2px;' %>
+			  		<%= link_to 'Genre', sort_path(filter: "genre"), class: 'btn btn-info btn-sm', style: 'margin:2px;' %>
+			  		<%= link_to 'Default', root_path, class: 'btn btn-danger btn-sm', style: 'margin:2px;' %>
 			  	</p>
 				</div>
 			</div>
@@ -19,7 +20,7 @@
     			<p class="card-subtitle mb-2 text-muted"><%= link_to 'All Reviews',all_reviews_path %> / <%= link_to 'All Movies', all_movies_path %> </p>
    			</div>
    		</div>
-   		<%= render partial: 'recent_reviews', collection: @reviews %>
+   		<%= render partial: 'recent_reviews', collection: @recent_reviews %>
 		</div>
   </div>
 </div>

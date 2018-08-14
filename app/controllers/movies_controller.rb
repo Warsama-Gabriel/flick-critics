@@ -1,8 +1,10 @@
 class MoviesController < ApplicationController
-	
+	include SortMovies
+
 	def index
   	get_movies 5
-    @reviews = Review.order(created_at: :desc).limit(3)
+    @reviews = Review.all
+    @recent_reviews = Review.order(:created_at).limit(3)
   end
 
   def all
@@ -17,8 +19,9 @@ class MoviesController < ApplicationController
 
   private
 
-  def get_movies number
+  def get_movies number, filter=nil
   	movies = Tmdb::Movie.popular.results
+  	sort_movies movies, filter: params[:filter] if params[:filter]
   	@movies = Kaminari.paginate_array(movies).page(params[:page]).per(number)
   end
 end
