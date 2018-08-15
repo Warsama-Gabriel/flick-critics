@@ -2,18 +2,7 @@
   <%= link_to image_tag("logo.png", size: "80x80"), root_path, class: 'navbar-brand' %>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav ml-md-auto d-md-flex">
-      <li class="nav-item">
-        <%= link_to 'Home', root_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Movies', all_movies_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Reviews', all_reviews_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'About', '#', class: "nav-link" %>
-      </li>
+      <%= nav_helper 'nav-link', 'li' %>
     </ul>
   </div>
 </nav>
