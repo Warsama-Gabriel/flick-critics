@@ -13,6 +13,10 @@ module ApplicationHelper
       {
         url: all_movies_path,
         title: 'Movies'
+      },
+      {
+        url: about_path,
+        title: 'About'
       }
     ]
   end

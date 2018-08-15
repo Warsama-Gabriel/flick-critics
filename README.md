@@ -1,24 +1,9 @@
-# README
+# Flick Critics
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
+Flick Critics is a movie review site where users can rate and leave comments on new and recent movies.
 
-Things you may want to cover:
+## Link
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
