@@ -69,3 +69,5 @@ gem 'dotenv-rails'
 gem 'pry-byebug'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+
+ruby "2.5.1"
