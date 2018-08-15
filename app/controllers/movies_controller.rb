@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 	include SortMovies
 
-	def index
+  def index
   	get_movies 5
     @reviews = Review.all
     @recent_reviews = Review.order(:created_at).limit(3)
@@ -15,6 +15,9 @@ class MoviesController < ApplicationController
     @movie = Tmdb::Movie.detail(params[:movie_id])
     @trailer = Tmdb::Movie.videos(@movie.id).first
     @reviews = Review.where(movie_id: @movie.id)
+  end
+
+  def about
   end
 
   private
