@@ -13,7 +13,7 @@ RSpec.feature "Reviews", type: :feature do
   	fill_in "Email", with: review.email
   	fill_in 'review_body', with: review.body
   	click_button "Submit"
-  	expect(page).to have_text review.body
   	save_and_open_page
+  	expect(page).to have_text review.body
   end
 end
