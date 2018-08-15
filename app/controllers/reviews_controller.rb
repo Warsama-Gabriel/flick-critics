@@ -1,8 +1,6 @@
 class ReviewsController < ApplicationController
 	before_action :set_movie, only: [:new]
 
-	def index
-	end
 	
 	def new
 		@review = Review.new
