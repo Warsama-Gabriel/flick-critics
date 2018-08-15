@@ -16,13 +16,12 @@ class MoviesController < ApplicationController
     @trailer = Tmdb::Movie.videos(@movie.id).first
     @reviews = Review.where(movie_id: @movie.id)
   end
-
-  def about
+	
+	def about
   end
-
-  private
-
-  def get_movies number, filter=nil
+	
+	private
+	def get_movies number, filter=nil
   	movies = Tmdb::Movie.popular.results
   	sort_movies movies, filter: params[:filter] if params[:filter]
   	@movies = Kaminari.paginate_array(movies).page(params[:page]).per(number)
