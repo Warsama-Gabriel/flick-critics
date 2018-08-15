@@ -5,5 +5,9 @@ FactoryBot.define do
     body "This was a cool movie!"
     sequence(:rating) { |n| n }
     movie_id "299536"
+
+    trait :invalid do
+    	rating nil
+  	end
   end
 end
