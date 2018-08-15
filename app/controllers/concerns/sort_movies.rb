@@ -1,6 +1,6 @@
 module SortMovies
 	extend ActiveSupport::Concern
-
+	
 	def sort_movies movies, filter:
 		if filter == 'title'
 			movies.sort_by! { |x| x.title }
